@@ -18,6 +18,8 @@ set shiftround
 set smarttab
 set autoindent
 
+set ignorecase
+
 inoremap <Tab> <c-r>=TabOrAuto()<cr>
 inoremap <S-Tab> <c-p>
 
