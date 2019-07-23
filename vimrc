@@ -19,6 +19,7 @@ set smarttab
 set autoindent
 
 set ignorecase
+set title
 
 inoremap <Tab> <c-r>=TabOrAuto()<cr>
 inoremap <S-Tab> <c-p>
