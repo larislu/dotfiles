@@ -1,4 +1,8 @@
-colo evening
+colo koehler
+hi Comment ctermfg=red
+hi Statement ctermfg=lightgreen
+hi Constant ctermfg=white
+hi Preproc ctermfg=lightyellow
 
 set mouse=a
 
