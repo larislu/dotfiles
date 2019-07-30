@@ -1,5 +1,5 @@
 colo koehler
-hi Comment ctermfg=red
+hi Comment ctermfg=lightred
 hi Statement ctermfg=lightgreen
 hi Constant ctermfg=white
 hi Preproc ctermfg=lightyellow
