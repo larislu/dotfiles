@@ -1,15 +1,20 @@
-colo koehler
-hi Comment ctermfg=lightred
-hi Statement ctermfg=lightgreen
-hi Constant ctermfg=white
-hi Preproc ctermfg=lightyellow
+colo ron
+highlight Normal ctermfg=white
 
 set mouse=a
 
 set number
+set showcmd
 set showmode
-set ruler
-set visualbell
+set title
+
+set laststatus=2
+set statusline+=%F\ %l\:%c
+highlight StatusLine ctermbg=none cterm=bold
+
+set nowrap
+set linebreak
+set display=lastline
 
 set showmatch
 set matchpairs=(:),{:},[:],<:>
@@ -23,7 +28,19 @@ set smarttab
 set autoindent
 
 set ignorecase
-set title
+set wrapscan
+
+set clipboard=unamed
+
+"Use J and K to scroll by paragraphs"
+noremap J {
+noremap K }
+
+noremap ` :noh<CR>
+
+set undofile
+set undolevels=100
+set undoreload=100
 
 inoremap <Tab> <c-r>=TabOrAuto()<cr>
 inoremap <S-Tab> <c-p>
@@ -38,3 +55,5 @@ function! TabOrAuto()
     endif
 endfunction
 
+highlight WhitespaceErrors ctermbg=Gray guibg=Gray
+match WhitespaceErrors /\s\+$\|[^\t]\@<=\t\+/
