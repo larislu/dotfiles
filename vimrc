@@ -1,6 +1,10 @@
 colo ron
 highlight Normal ctermfg=white
 
+"gvim settings"
+set guifont=Monospace\ Bold\ 14
+"set guioptions -=T"
+
 set mouse=a
 
 set number
@@ -9,7 +13,7 @@ set showmode
 set title
 
 set laststatus=2
-set statusline+=%F\ %l\:%c
+set statusline+=%F\ %=%l\:%c\:%P
 highlight StatusLine ctermbg=none cterm=bold
 
 set nowrap
@@ -30,7 +34,7 @@ set autoindent
 set ignorecase
 set wrapscan
 
-set clipboard=unamed
+set clipboard=unnamed
 
 "Use J and K to scroll by paragraphs"
 noremap J {
@@ -55,5 +59,8 @@ function! TabOrAuto()
     endif
 endfunction
 
-highlight WhitespaceErrors ctermbg=Gray guibg=Gray
+highlight WhitespaceErrors ctermbg=DarkGray guibg=DarkGray
 match WhitespaceErrors /\s\+$\|[^\t]\@<=\t\+/
+
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
