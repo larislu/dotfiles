@@ -1,11 +1,14 @@
-colo ron
-highlight Normal ctermfg=white
+"colo koehler"
+"highlight Normal ctermfg=white"
+let base16colorspace=256
+"color base16-darktooth"
 
-"gvim settings"
+"gvim settingss"
 set guifont=Monospace\ Bold\ 14
 "set guioptions -=T"
 
 set mouse=a
+set showcmd
 
 set number
 set showcmd
@@ -34,17 +37,23 @@ set autoindent
 set ignorecase
 set wrapscan
 
-set clipboard=unnamed
+set clipboard=unnamedplus
+set wildmenu
 
 "Use J and K to scroll by paragraphs"
-noremap J {
-noremap K }
+noremap K {
+noremap J }
 
+set hlsearch
 noremap ` :noh<CR>
 
-set undofile
-set undolevels=100
-set undoreload=100
+try
+    set undodir=~/.vim_runtime/temp_dirs/undodir
+    set undofile
+    set undolevels=100
+    set undoreload=100
+catch
+endtry
 
 inoremap <Tab> <c-r>=TabOrAuto()<cr>
 inoremap <S-Tab> <c-p>
@@ -62,5 +71,8 @@ endfunction
 highlight WhitespaceErrors ctermbg=DarkGray guibg=DarkGray
 match WhitespaceErrors /\s\+$\|[^\t]\@<=\t\+/
 
+"Deletes trailing white spaces"
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
