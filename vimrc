@@ -41,11 +41,15 @@ set clipboard=unnamedplus
 set wildmenu
 
 "Use J and K to scroll by paragraphs"
-noremap K {
-noremap J }
+nnoremap K {
+nnoremap J }
 
 set hlsearch
 noremap ` :noh<CR>
+
+set splitbelow
+set splitright
+nnoremap <C-w> <C-w>w
 
 try
     set undodir=~/.vim_runtime/temp_dirs/undodir
@@ -76,3 +80,5 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+nnoremap $ ^
+nnoremap ^ $
